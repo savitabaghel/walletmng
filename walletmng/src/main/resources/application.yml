@@ -1,0 +1,8 @@
+server:
+  port: 8383
+
+
+
+
+jwt:
+  secret: secretkey123

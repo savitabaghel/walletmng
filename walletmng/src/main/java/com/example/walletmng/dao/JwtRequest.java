@@ -1,4 +1,4 @@
-package com.example.walletmng.model;
+package com.example.walletmng.dao;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

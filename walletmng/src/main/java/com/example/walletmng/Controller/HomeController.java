@@ -1,8 +1,8 @@
 package com.example.walletmng.Controller;
 
 import com.example.walletmng.Service.UserService;
-import com.example.walletmng.model.JwtRequest;
-import com.example.walletmng.model.JwtResponse;
+import com.example.walletmng.dao.JwtRequest;
+import com.example.walletmng.dto.JwtResponse;
 import com.example.walletmng.utility.JWTUtility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

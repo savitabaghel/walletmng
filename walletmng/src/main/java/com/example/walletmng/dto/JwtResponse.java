@@ -1,4 +1,4 @@
-package com.example.walletmng.model;
+package com.example.walletmng.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

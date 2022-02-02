@@ -1,4 +1,4 @@
-package com.example.walletmng.Controller;
+package com.example.walletmng.dao;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;

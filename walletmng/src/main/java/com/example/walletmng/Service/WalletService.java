@@ -1,7 +1,7 @@
 package com.example.walletmng.Service;
 
 
-import com.example.walletmng.Controller.Holder;
+import com.example.walletmng.dao.Holder;
 import com.example.walletmng.Repository.TransactionRepository;
 import com.example.walletmng.Repository.WalletRepository;
 import com.example.walletmng.model.Transaction;

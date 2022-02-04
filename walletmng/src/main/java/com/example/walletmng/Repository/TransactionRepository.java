@@ -10,4 +10,5 @@ public interface TransactionRepository extends JpaRepository<Transaction,Long>
 {
 
     Transaction findAllById(long id);
+
 }

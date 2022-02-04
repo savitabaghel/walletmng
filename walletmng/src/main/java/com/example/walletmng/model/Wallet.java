@@ -27,7 +27,7 @@ public class Wallet {
     @Column(name = "balance")
     private double balance;
 
-    @OneToMany(mappedBy = "wallet",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "wallet",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     //@JsonIgnore
     private List<Transaction>transaction;
 

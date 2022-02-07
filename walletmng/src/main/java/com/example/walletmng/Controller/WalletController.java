@@ -61,7 +61,7 @@ public class WalletController {
    @PostMapping("/transaction")
    public ResponseEntity<Object>transactionbymobile(@RequestBody Holder holder)
    {
-           System.out.println(holder);
+           //System.out.println(holder);
            boolean result=walletService.transaction(holder);
            if(result)
                return BaseResponse.generateResponse("Transaction successfully",HttpStatus.OK,null);

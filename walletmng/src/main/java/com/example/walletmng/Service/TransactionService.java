@@ -19,8 +19,10 @@ public class TransactionService {
     TransactionRepository transactionRepository;
 
     public Transaction findby(long id)
-    {
-        Transaction result= transactionRepository.findById(id).get();
+    {   Transaction result=null;
+        if(transactionRepository.existsById(id))
+        { result= transactionRepository.findById(id).get();
+        return result;}
         return result;
     }
     public List<Transaction>findTransaction()

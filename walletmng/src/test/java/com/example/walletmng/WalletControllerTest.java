@@ -18,12 +18,14 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -64,7 +66,20 @@ public class WalletControllerTest {
         verify(walletService,times(1)).create(any());
 
     }
-
+    @Test
+    public void getAllWalletTest()throws Exception
+    {
+        when(walletService.findAllWallet()).thenReturn(walletList);
+        mockMvc.perform(get("/w/wallet").contentType(MediaType.APPLICATION_JSON).content(asJsonString(wallet))).andDo(MockMvcResultHandlers.print());
+        verify(walletService).findAllWallet();
+        verify(walletService,times(1)).findAllWallet();
+    }
+    @Test
+    public void getWalletByMobileNoTest() throws Exception
+    {
+        when(walletService.findOne(wallet.getMobileno())).thenReturn(wallet);
+        mockMvc.perform(get("/w/wallet/9109549374").contentType(MediaType.APPLICATION_JSON).content(asJsonString(wallet))).andExpect(status().isOk());
+    }
 
 
     public static String asJsonString(final Object obj)

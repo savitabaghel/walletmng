@@ -33,7 +33,7 @@ public class TransactionServiceTest {
         transaction.setId(2065);
         transaction.setPayeemobile("987654");
         transaction.setPayermobile("456789");
-        transaction.setTransactionTime(new Timestamp(new Date().getTime()));
+        transaction.setDate(new Date());
         transaction.setAmount(40.0);
         transaction.setWallet(null);
 
@@ -47,7 +47,7 @@ public class TransactionServiceTest {
         transaction1.setId(2066);
         transaction1.setPayeemobile("987654");
         transaction1.setPayermobile("456789");
-        transaction1.setTransactionTime(new Timestamp(new Date().getTime()));
+        transaction1.setDate(new Date());
         transaction1.setAmount(40.0);
         transaction1.setWallet(null);
 
@@ -55,7 +55,7 @@ public class TransactionServiceTest {
         transaction2.setId(2067);
         transaction2.setPayeemobile("987654");
         transaction2.setPayermobile("456789");
-        transaction2.setTransactionTime(new Timestamp(new Date().getTime()));
+        transaction2.setDate(new Date());
         transaction2.setAmount(40.0);
         transaction2.setWallet(null);
 

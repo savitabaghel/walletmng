@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Component
 @Service
@@ -25,5 +27,14 @@ public class TransactionService {
 
     {
         return transactionRepository.findAll();
+    }
+    public List<Transaction>getAllTransactionOfUser(String mobileno)
+    {
+        List<Transaction>list1=transactionRepository.findBypayeemobile(mobileno);
+        List<Transaction>list2=transactionRepository.findBypayermobile(mobileno);
+        List<Transaction> result = new ArrayList<>(list1.size() + list2.size());
+        result.addAll(list1);
+        result.addAll(list2);
+        return result;
     }
 }

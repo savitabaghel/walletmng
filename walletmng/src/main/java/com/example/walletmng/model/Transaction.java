@@ -41,8 +41,5 @@ public class Transaction {
     private Double amount;
 
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "mobileno")
-    private Wallet wallet;
+
 }

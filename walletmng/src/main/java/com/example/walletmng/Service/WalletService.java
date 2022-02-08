@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -61,15 +62,18 @@ public class WalletService {
 
     public boolean transaction(Holder holder)
     {
-        System.out.println(holder.getPayembileno());
+
         Wallet payewallet=walletRepository.findByMobileno(holder.getPayembileno());
-        System.out.println(payewallet);
+
         Wallet payerwallet=walletRepository.findByMobileno(holder.getPayermobileno());
+
         if(payewallet==null||payerwallet==null)
             return false;
         double payeeamount=payewallet.getBalance();
         double payerAmount=payerwallet.getBalance();
         double amount=holder.getAmount();
+
+        System.out.println(amount);
 
          if(payerAmount-amount>=0)
         {
@@ -79,9 +83,14 @@ public class WalletService {
             payerwallet.setBalance(payerAmount);
 
             Transaction crt=new Transaction();
+
             crt.setAmount(amount);
+
+            crt.setDate(new Date());
             crt.setPayermobile(holder.getPayermobileno());
+
             crt.setPayeemobile(holder.getPayembileno());
+           // System.out.println(crt.getPayeemobile());
 
             transactionRepository.save(crt);
 

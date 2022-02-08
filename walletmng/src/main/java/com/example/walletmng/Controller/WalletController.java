@@ -20,10 +20,10 @@ public class WalletController {
     private WalletService walletService;
 
     @PostMapping("/wallet")
-    public ResponseEntity<Object>createWallet(@RequestBody Wallet wallet1)
+    public ResponseEntity<Object>createWallet(@RequestBody Wallet wallet)
     {
-         System.out.println(wallet1);
-            Wallet result=walletService.create(wallet1);
+         //System.out.println(wallet1);
+            Wallet result=walletService.create(wallet);
             if(result!=null)
                 return BaseResponse.generateResponse("Successfully created", HttpStatus.CREATED,result);
             else

@@ -28,7 +28,7 @@ public class TransactionRepositoryTest {
     @BeforeEach
     public void setUp()
     {
-        transaction=new Transaction(208,null,"87657","56743",30.0,null);
+        transaction=new Transaction(208,null,"87657","56743",30.0);
 
     }
     @AfterEach
@@ -52,8 +52,8 @@ public class TransactionRepositoryTest {
     @Test
     public void deleteAllTest()
     {
-       Transaction transaction1=new Transaction(30,null,"9109549374","9691984546",800.0,null);
-       Transaction transaction2=new Transaction(20,null,"6754345676","876987554",200.0,null);
+       Transaction transaction1=new Transaction(30,null,"9109549374","9691984546",800.0);
+       Transaction transaction2=new Transaction(20,null,"6754345676","876987554",200.0);
        transactionRepository.save(transaction1);
        transactionRepository.save(transaction2);
 

@@ -21,7 +21,7 @@ public class WalletRepositoryTest {
     @BeforeEach
     public void setWallet()
     {
-        wallet=new Wallet("9109549374",30.0,null);
+        wallet=new Wallet(5,"9109549300",30.0);
 
     }
 
@@ -34,15 +34,15 @@ public class WalletRepositoryTest {
     @Test
     public void getAllWalletTest()
     {
-        Wallet wallet1=new Wallet("9109549374",300.0,null);
-        Wallet wallet2=new Wallet("7865435678",8667.0,null);
-        Wallet wallet3=new Wallet("9807654657",200.0,null);
+        Wallet wallet1=new Wallet(8,"91099999",300.0);
+        Wallet wallet2=new Wallet(9,"7865435678",8667.0);
+        Wallet wallet3=new Wallet(19,"9807654657",200.0);
         walletRepository.save(wallet1);
         walletRepository.save(wallet2);
         walletRepository.save(wallet3);
 
         List<Wallet>walletList=walletRepository.findAll();
-        assertEquals("7865435678",walletList.get(0).getMobileno());
+        assertEquals("7865435678",walletList.get(1).getMobileno());
 
 
     }
@@ -50,8 +50,8 @@ public class WalletRepositoryTest {
     public void getWalletByMobile()
    {
        walletRepository.save(wallet);
-       Wallet wallet1=walletRepository.findByMobileno("9109549374");
-       assertEquals("9109549374",wallet1.getMobileno());
+       Wallet wallet1=walletRepository.findByMobileno("9109549300");
+       assertEquals("9109549300",wallet1.getMobileno());
    }
 
 }

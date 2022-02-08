@@ -49,7 +49,7 @@ public class WalletControllerTest {
     @BeforeEach
     public void setWallet()
     {
-        wallet=new Wallet("9109549374",300.0,null);
+        wallet=new Wallet(5,"9109549374",300.0);
         mockMvc= MockMvcBuilders.standaloneSetup(walletController).build();
     }
     @AfterEach

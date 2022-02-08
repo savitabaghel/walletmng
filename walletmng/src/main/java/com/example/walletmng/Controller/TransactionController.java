@@ -41,16 +41,16 @@ public class TransactionController {
             return BaseResponse.generateResponse(e.getMessage(), HttpStatus.MULTI_STATUS,null);
         }
     }
-    @GetMapping("/user/transaction/{mobileno}")
-    ResponseEntity<Object>findByUser(@PathVariable String mobileno)
-    {
-        try{
-            List<Transaction>result=transactionService.getAllTransactionOfUser(mobileno);
-            return BaseResponse.generateResponse("Successfully retrieved",HttpStatus.OK,result);
-        }
-        catch (Exception e)
-        {
-            return  BaseResponse.generateResponse(e.getMessage(),HttpStatus.MULTI_STATUS,null);
-        }
-    }
+//    @GetMapping("/user/transaction/{mobileno}")
+//    ResponseEntity<Object>findByUser(@PathVariable String mobileno)
+//    {
+//        try{
+//            List<Transaction>result=transactionService.getAllTransactionOfUser(mobileno);
+//            return BaseResponse.generateResponse("Successfully retrieved",HttpStatus.OK,result);
+//        }
+//        catch (Exception e)
+//        {
+//            return  BaseResponse.generateResponse(e.getMessage(),HttpStatus.MULTI_STATUS,null);
+//        }
+//    }
 }

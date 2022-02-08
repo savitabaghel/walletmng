@@ -29,10 +29,9 @@ public class WalletServiceTest {
     @Test
     public void getWalletTest()
     {
-        when(walletRepository.findAll()).thenReturn((List<Wallet>) Stream.of(new Wallet(
+        when(walletRepository.findAll()).thenReturn((List<Wallet>) Stream.of(new Wallet(1,
                 "9876654",
-                30.0,
-                null)).collect(Collectors.toList()));
+                30.0)).collect(Collectors.toList()));
 
         assertEquals(1,walletService.findAllWallet().size());
 
@@ -41,6 +40,7 @@ public class WalletServiceTest {
     public void getWalletByMobileTest()
     {
         Wallet wallet=new Wallet();
+
         wallet.setMobileno("76584309");
         wallet.setBalance(40.0);
         when(walletRepository.findByMobileno("76584309")).thenReturn(wallet);
@@ -50,7 +50,7 @@ public class WalletServiceTest {
     @Test
     public void createWalletTest()
     {
-        Wallet wallet=new Wallet("98765432",220.0,null);
+        Wallet wallet=new Wallet(2,"98765432",220.0);
         when(walletRepository.save(wallet)).thenReturn(wallet);
         assertEquals(wallet,walletService.create(wallet));
     }

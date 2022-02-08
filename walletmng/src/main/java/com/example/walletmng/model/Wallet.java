@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,22 +22,19 @@ import java.util.List;
 public class Wallet {
 
     @Id
+    @Column(name = "walletId")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long walletId;
+
     @Column(name = "mobileno",unique = true)
     private String mobileno;
+
 
     @Column(name = "balance")
     private double balance;
 
-    @OneToMany(mappedBy = "wallet",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    //@JsonIgnore
-    private List<Transaction>transaction;
 
-    @Override
-    public String toString() {
-        return "Wallet{" +
-                "mobileno='" + mobileno + '\'' +
-                ", balance=" + balance +
-                ", transaction=" + transaction +
-                '}';
-    }
+
+
+
 }

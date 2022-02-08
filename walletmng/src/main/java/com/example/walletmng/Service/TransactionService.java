@@ -19,10 +19,7 @@ public class TransactionService {
     TransactionRepository transactionRepository;
 
     public Transaction findby(long id)
-    {   Transaction result=null;
-        if(transactionRepository.existsById(id))
-        { result= transactionRepository.findById(id).get();
-        return result;}
+    {   Transaction result= transactionRepository.findById(id).get();
         return result;
     }
     public List<Transaction>findTransaction()
@@ -30,13 +27,13 @@ public class TransactionService {
     {
         return transactionRepository.findAll();
     }
-    public List<Transaction>getAllTransactionOfUser(String mobileno)
-    {
-        List<Transaction>list1=transactionRepository.findBypayeemobile(mobileno);
-        List<Transaction>list2=transactionRepository.findBypayermobile(mobileno);
-        List<Transaction> result = new ArrayList<>(list1.size() + list2.size());
-        result.addAll(list1);
-        result.addAll(list2);
-        return result;
-    }
+//    public List<Transaction>getAllTransactionOfUser(String mobileno)
+//    {
+//        List<Transaction>list1=transactionRepository.findBypayeemobile(mobileno);
+//        List<Transaction>list2=transactionRepository.findBypayermobile(mobileno);
+//        List<Transaction> result = new ArrayList<>(list1.size() + list2.size());
+//        result.addAll(list1);
+//        result.addAll(list2);
+//        return result;
+//    }
 }

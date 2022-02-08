@@ -30,15 +30,16 @@ public class TransactionServiceTest {
     public void getByIdtest()
     {
         Transaction transaction=new Transaction();
-        transaction.setId(2065);
+        transaction.setId(2069);
         transaction.setPayeemobile("987654");
         transaction.setPayermobile("456789");
         transaction.setDate(new Date());
         transaction.setAmount(40.0);
-        transaction.setWallet(null);
 
-        when(transactionRepository.findById(2065L)).thenReturn(Optional.of(transaction));
-        assertThat(transactionService.findby(2065L)).isEqualTo(transaction);
+
+        when(transactionRepository.findById(2069L)).thenReturn(Optional.of(transaction));
+        System.out.println(transactionService.findby(2069L));
+        assertThat(transactionService.findby(2069L)).isEqualTo(transaction);
     }
     @Test
     public void getAllTransactionTest()
@@ -49,7 +50,7 @@ public class TransactionServiceTest {
         transaction1.setPayermobile("456789");
         transaction1.setDate(new Date());
         transaction1.setAmount(40.0);
-        transaction1.setWallet(null);
+
 
         Transaction transaction2=new Transaction();
         transaction2.setId(2067);
@@ -57,7 +58,7 @@ public class TransactionServiceTest {
         transaction2.setPayermobile("456789");
         transaction2.setDate(new Date());
         transaction2.setAmount(40.0);
-        transaction2.setWallet(null);
+
 
         List<Transaction>transactionList=new ArrayList<>();
         transactionList.add(transaction1);

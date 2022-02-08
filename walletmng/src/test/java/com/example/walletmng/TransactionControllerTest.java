@@ -48,7 +48,7 @@ public class TransactionControllerTest {
     @BeforeEach
     public void setTransaction()
     {
-        transaction=new Transaction(1,new Date(),"9109549374","9988223344",30.0,null);
+        transaction=new Transaction(1,new Date(),"9109549374","9988223344",30.0);
         mockMvc= MockMvcBuilders.standaloneSetup(transactionController).build();
     }
     @AfterEach

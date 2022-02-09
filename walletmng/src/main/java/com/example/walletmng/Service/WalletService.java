@@ -51,6 +51,8 @@ public class WalletService {
 
         Transaction crt=new Transaction();
         crt.setPayermobile(mobileno);
+        crt.setPayeemobile(null);
+        crt.setDate(new Date());
         crt.setAmount(money);
         transactionRepository.save(crt);
         return exists;

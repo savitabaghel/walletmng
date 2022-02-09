@@ -54,4 +54,5 @@ public class WalletServiceTest {
         when(walletRepository.save(wallet)).thenReturn(wallet);
         assertEquals(wallet,walletService.create(wallet));
     }
+
 }

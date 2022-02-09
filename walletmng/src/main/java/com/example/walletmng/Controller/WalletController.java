@@ -4,6 +4,7 @@ package com.example.walletmng.Controller;
 import com.example.walletmng.Response.BaseResponse;
 import com.example.walletmng.Service.WalletService;
 import com.example.walletmng.dao.Holder;
+import com.example.walletmng.dao.WalletDao;
 import com.example.walletmng.model.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -70,10 +71,10 @@ public class WalletController {
 
    }
    @PutMapping("/wallet/{mobileno}")
-    public ResponseEntity<Object>addInWallet(@RequestBody double money,@PathVariable("mobileno")String mobileno)
+    public ResponseEntity<Object>addInWallet(@RequestBody WalletDao walletDao, @PathVariable("mobileno")String mobileno)
    {
 
-       Wallet wallet=walletService.addMoney(money, mobileno);
+       Wallet wallet=walletService.addMoney(walletDao.getMoney(), mobileno);
        if(wallet!=null){
            return BaseResponse.generateResponse("successfully added",HttpStatus.OK,wallet);
        }

@@ -5,6 +5,7 @@ import com.example.walletmng.Response.BaseResponse;
 import com.example.walletmng.Service.WalletService;
 import com.example.walletmng.dao.Holder;
 import com.example.walletmng.dao.WalletDao;
+import com.example.walletmng.kafka.Producer;
 import com.example.walletmng.model.Wallet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,15 @@ public class WalletController {
 
     @Autowired
     private WalletService walletService;
+
+    @Autowired
+    Producer producer;
+
+    @GetMapping("/post")
+    public void sendMessage(@RequestParam("msg") String msg)
+    {
+        producer.publishToTopic(msg);
+    }
 
     @PostMapping("/wallet")
     public ResponseEntity<Object>createWallet(@RequestBody Wallet wallet)

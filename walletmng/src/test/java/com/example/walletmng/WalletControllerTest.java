@@ -62,7 +62,10 @@ public class WalletControllerTest {
     public void createWalletTest()throws Exception
     {
         when(walletService.create(any())).thenReturn(wallet);
-        mockMvc.perform(post("/w/wallet").contentType(MediaType.APPLICATION_JSON).content(asJsonString(wallet))).andExpect(status().isCreated());
+        mockMvc.perform(post("/w/wallet")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(asJsonString(wallet)))
+                .andExpect(status().isCreated());
         verify(walletService,times(1)).create(any());
 
     }
@@ -70,7 +73,10 @@ public class WalletControllerTest {
     public void getAllWalletTest()throws Exception
     {
         when(walletService.findAllWallet()).thenReturn(walletList);
-        mockMvc.perform(get("/w/wallet").contentType(MediaType.APPLICATION_JSON).content(asJsonString(wallet))).andDo(MockMvcResultHandlers.print());
+        mockMvc.perform(get("/w/wallet")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(asJsonString(wallet)))
+                .andDo(MockMvcResultHandlers.print());
         verify(walletService).findAllWallet();
         verify(walletService,times(1)).findAllWallet();
     }
@@ -78,7 +84,10 @@ public class WalletControllerTest {
     public void getWalletByMobileNoTest() throws Exception
     {
         when(walletService.findOne(wallet.getMobileno())).thenReturn(wallet);
-        mockMvc.perform(get("/w/wallet/9109549374").contentType(MediaType.APPLICATION_JSON).content(asJsonString(wallet))).andExpect(status().isOk());
+        mockMvc.perform(get("/w/wallet/9109549374")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(asJsonString(wallet)))
+                .andExpect(status().isOk());
     }
 
 

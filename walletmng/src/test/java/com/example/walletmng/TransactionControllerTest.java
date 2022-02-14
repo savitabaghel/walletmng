@@ -60,14 +60,20 @@ public class TransactionControllerTest {
     public void getTransactionById()throws Exception
     {
         when(transactionService.findby(transaction.getId())).thenReturn(transaction);
-        mockMvc.perform(MockMvcRequestBuilders.get("/t/transaction/1").contentType(MediaType.APPLICATION_JSON).content(asJsonString(transaction))).andExpect(MockMvcResultMatchers.status().isOk()).andDo(MockMvcResultHandlers.print());
+        mockMvc.perform(MockMvcRequestBuilders.get("/t/transaction/1")
+                .contentType(MediaType.APPLICATION_JSON).content(asJsonString(transaction)))
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andDo(MockMvcResultHandlers.print());
     }
 
     @Test
     public void getAllTransactionTest()throws Exception
     {
         when(transactionService.findTransaction()).thenReturn(transactionList);
-        mockMvc.perform(MockMvcRequestBuilders.get("/t/transaction").contentType(MediaType.APPLICATION_JSON).content(asJsonString(transaction))).andDo(MockMvcResultHandlers.print());
+        mockMvc.perform(MockMvcRequestBuilders.get("/t/transaction")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(asJsonString(transaction)))
+                .andDo(MockMvcResultHandlers.print());
         verify(transactionService).findTransaction();
         verify(transactionService,times(1)).findTransaction();
     }

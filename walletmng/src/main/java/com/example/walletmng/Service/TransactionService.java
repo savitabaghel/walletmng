@@ -2,7 +2,10 @@ package com.example.walletmng.Service;
 
 
 import com.example.walletmng.Repository.TransactionRepository;
+import com.example.walletmng.kafka.Consumer;
 import com.example.walletmng.model.Transaction;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -18,22 +21,18 @@ public class TransactionService {
     @Autowired
     TransactionRepository transactionRepository;
 
+    private static final Logger logger= LogManager.getLogger(TransactionService.class);
+
+    // to find transaction by a particular id
     public Transaction findby(long id)
     {   Transaction result= transactionRepository.findById(id).get();
         return result;
     }
+    //to get list of all transaction
     public List<Transaction>findTransaction()
 
     {
         return transactionRepository.findAll();
     }
-//    public List<Transaction>getAllTransactionOfUser(String mobileno)
-//    {
-//        List<Transaction>list1=transactionRepository.findBypayeemobile(mobileno);
-//        List<Transaction>list2=transactionRepository.findBypayermobile(mobileno);
-//        List<Transaction> result = new ArrayList<>(list1.size() + list2.size());
-//        result.addAll(list1);
-//        result.addAll(list2);
-//        return result;
-//    }
+
 }

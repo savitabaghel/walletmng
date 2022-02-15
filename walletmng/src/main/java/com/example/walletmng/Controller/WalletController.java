@@ -5,8 +5,11 @@ import com.example.walletmng.Response.BaseResponse;
 import com.example.walletmng.Service.WalletService;
 import com.example.walletmng.dao.Holder;
 import com.example.walletmng.dao.WalletDao;
+import com.example.walletmng.kafka.Consumer;
 import com.example.walletmng.kafka.Producer;
 import com.example.walletmng.model.Wallet;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +27,8 @@ public class WalletController {
     @Autowired
     Producer producer;
 
+    private static final Logger logger= LogManager.getLogger(WalletController.class);
+
     @GetMapping("/post")
     public void sendMessage(@RequestParam("msg") String msg)
     {
@@ -33,8 +38,9 @@ public class WalletController {
     @PostMapping("/wallet")
     public ResponseEntity<Object>createWallet(@RequestBody Wallet wallet)
     {
-         //System.out.println(wallet1);
+
             Wallet result=walletService.create(wallet);
+            logger.info(result);
             if(result!=null)
                 return BaseResponse.generateResponse("Successfully created", HttpStatus.CREATED,result);
             else
@@ -72,7 +78,8 @@ public class WalletController {
    @PostMapping("/transaction")
    public ResponseEntity<Object>transactionbymobile(@RequestBody Holder holder)
    {
-           //System.out.println(holder);
+
+          logger.info(holder);
            boolean result=walletService.transaction(holder);
            if(result)
                return BaseResponse.generateResponse("Transaction successfully",HttpStatus.OK,null);

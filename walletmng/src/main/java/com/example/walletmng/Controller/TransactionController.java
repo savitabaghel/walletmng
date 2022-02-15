@@ -21,36 +21,21 @@ public class TransactionController {
     TransactionService transactionService;
 
     @GetMapping("/transaction/{id}")
-    ResponseEntity<Object> findone(@PathVariable long id)
-    {
-        Transaction result=transactionService.findby(id);
-        if(result!=null)
-            return BaseResponse.generateResponse("Retrieve successfully", HttpStatus.OK,result);
+    ResponseEntity<Object> findone(@PathVariable long id) {
+        Transaction result = transactionService.findby(id);
+        if (result != null)
+            return BaseResponse.generateResponse("Retrieve successfully", HttpStatus.OK, result);
         else
-            return BaseResponse.generateResponse("Cannot retrieve ",HttpStatus.BAD_REQUEST,null);
+            return BaseResponse.generateResponse("Cannot retrieve ", HttpStatus.BAD_REQUEST, null);
     }
+
     @GetMapping("/transaction")
-    ResponseEntity<Object> findAllTransaction()
-    {
+    ResponseEntity<Object> findAllTransaction() {
         try {
-            List<Transaction> result=transactionService.findTransaction();
-            return BaseResponse.generateResponse("Successfully fatched",HttpStatus.OK,result);
-        }
-        catch (Exception e)
-        {
-            return BaseResponse.generateResponse(e.getMessage(), HttpStatus.MULTI_STATUS,null);
+            List<Transaction> result = transactionService.findTransaction();
+            return BaseResponse.generateResponse("Successfully fatched", HttpStatus.OK, result);
+        } catch (Exception e) {
+            return BaseResponse.generateResponse(e.getMessage(), HttpStatus.MULTI_STATUS, null);
         }
     }
-//    @GetMapping("/user/transaction/{mobileno}")
-//    ResponseEntity<Object>findByUser(@PathVariable String mobileno)
-//    {
-//        try{
-//            List<Transaction>result=transactionService.getAllTransactionOfUser(mobileno);
-//            return BaseResponse.generateResponse("Successfully retrieved",HttpStatus.OK,result);
-//        }
-//        catch (Exception e)
-//        {
-//            return  BaseResponse.generateResponse(e.getMessage(),HttpStatus.MULTI_STATUS,null);
-//        }
-//    }
 }

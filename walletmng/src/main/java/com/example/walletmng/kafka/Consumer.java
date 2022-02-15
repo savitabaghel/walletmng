@@ -13,7 +13,7 @@ public class Consumer {
     @KafkaListener(topics="NewTopic",groupId = "mygroup")
     public void consumeFromTopic(String message)
     {
-        logger.debug("Consumed message"+message);
+        logger.info("Consumed message"+message);
     }
 
 }

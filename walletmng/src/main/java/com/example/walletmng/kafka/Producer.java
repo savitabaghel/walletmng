@@ -18,7 +18,7 @@ public class Producer {
 
     public void publishToTopic(String message)
     {
-        logger.debug("Publishing to topic"+topic);
+        logger.info("Publishing to topic"+topic);
         this.kafkaTemplate.send(topic,message);
     }
 }

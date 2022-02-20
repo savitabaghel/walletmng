@@ -1,0 +1,26 @@
+2022-02-16 14:01:39.059  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 16960 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-16 14:01:39.087 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-16 14:01:39.088  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-16 14:01:43.177 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-16 14:01:48.088  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 9.668 seconds (JVM running for 11.124)
+2022-02-16 14:18:38.756  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 15496 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-16 14:18:38.774 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-16 14:18:38.775  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-16 14:18:41.822 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-16 14:18:47.328  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 9.26 seconds (JVM running for 10.662)
+2022-02-16 14:19:07.633  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-2] c.e.w.S.WalletService                    : Service : Providing service to API : create wallet for a user 
+2022-02-16 14:19:41.011  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-4] c.e.w.S.WalletService                    : Service : Providing service to API : create wallet for a user 
+2022-02-16 14:19:42.104  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-4] c.e.w.C.WalletController                 : com.example.walletmng.model.Wallet@47228dc1
+2022-02-16 14:22:09.667  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 10740 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-16 14:22:09.680 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-16 14:22:09.684  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-16 14:22:12.924 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-16 14:22:18.518  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 9.539 seconds (JVM running for 11.03)
+2022-02-16 14:22:29.253  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-2] c.e.w.S.WalletService                    : Service : Providing service to API : create wallet for a user 
+2022-02-16 14:27:35.478  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 16448 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-16 14:27:35.498 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-16 14:27:35.500  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-16 14:27:39.448 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-16 14:27:44.305  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 9.539 seconds (JVM running for 11.055)
+2022-02-16 14:27:54.424  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-2] c.e.w.S.WalletService                    : Service : Providing service to API : create wallet for a user 
+2022-02-16 14:27:55.168  WARN LAPTOP-MV12NDAT --- [nio-8383-exec-2] c.e.w.S.WalletService                    : wallet already present

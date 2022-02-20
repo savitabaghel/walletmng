@@ -40,11 +40,15 @@ public class WalletController {
     {
 
             Wallet result=walletService.create(wallet);
-            logger.info(result);
-            if(result!=null)
+
+            if(result!=null){
+                logger.info("Wallet created successfully");
                 return BaseResponse.generateResponse("Successfully created", HttpStatus.CREATED,result);
+            }
             else
+            {   logger.error("Wallet not created");
                 return BaseResponse.generateResponse("Cant created",HttpStatus.MULTI_STATUS,null);
+            }
 
 
     }
@@ -79,7 +83,7 @@ public class WalletController {
    public ResponseEntity<Object>transactionbymobile(@RequestBody Holder holder)
    {
 
-          logger.info(holder);
+         // logger.info(holder);
            boolean result=walletService.transaction(holder);
            if(result)
                return BaseResponse.generateResponse("Transaction successfully",HttpStatus.OK,null);

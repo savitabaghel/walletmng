@@ -17,8 +17,7 @@ public class WalletmngApplication {
 
 
 	@Bean
-	public PasswordEncoder passwordEncoder()
-	{
+	public PasswordEncoder passwordEncoder() {
 		return NoOpPasswordEncoder.getInstance();
 	}
 

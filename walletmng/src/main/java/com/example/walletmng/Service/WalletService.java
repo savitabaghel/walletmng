@@ -31,14 +31,14 @@ public class WalletService {
     public List<Wallet>findAllWallet()
     {
 
-        logger.info("Service : Providing service to API : getAllWallet request");
+        logger.info("Service:All Wallet : getAllWallet request");
         logger.warn("Service : Fetching list of Wallets  : ");
 
         return walletRepository.findAll();
     }
     public Wallet findOne(String mobileno)
     {
-        logger.info("Service : Providing service to API : getWallet by mobile number  request");
+        logger.info(" Service:One Wallet: getWallet by mobile number  request");
 
         Wallet exists=walletRepository.findByMobileno(mobileno);
         return exists;
@@ -46,7 +46,7 @@ public class WalletService {
     public Wallet create(Wallet wallet)
     {
 
-        logger.info("Service : Providing service to API : create wallet for a user ");
+        logger.info("Service:Create Wallet  : create wallet for a user ");
         Wallet exists= null;
                 exists=walletRepository.findByMobileno(wallet.getMobileno());
          if(exists!=null);
@@ -61,7 +61,7 @@ public class WalletService {
     public Wallet addMoney(double money,String mobileno)
 
     {
-        logger.info("Service : Providing service to API : Add money in wallet");
+        logger.info("Service:Add money   : Add money in wallet");
         Wallet exists=walletRepository.findByMobileno(mobileno);
        if(exists!=null)
        {
@@ -88,7 +88,7 @@ public class WalletService {
 
     public boolean transaction(Holder holder)
     {
-
+        logger.info("Service:make transaction service  : Add money in wallet");
         Wallet payewallet=walletRepository.findByMobileno(holder.getPayembileno());
 
         Wallet payerwallet=walletRepository.findByMobileno(holder.getPayermobileno());
@@ -106,7 +106,7 @@ public class WalletService {
 
          if(payerAmount-amount>=0)
         {
-            logger.info("Transfering amount->\n");
+
             payerAmount = payerAmount-amount;
             payeeamount=payeeamount+amount;
             payewallet.setBalance(payeeamount);

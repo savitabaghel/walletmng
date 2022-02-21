@@ -26,7 +26,7 @@ public class TransactionService {
     // to find transaction by a particular id
     public Transaction findby(long id)
     {
-        logger.info("Service : Providing service to API : Transaction Information for Id:");
+        logger.info("Service : Find transaction by id: Transaction Information for Id:");
         Transaction result= transactionRepository.findById(id).get();
         return result;
     }
@@ -34,7 +34,7 @@ public class TransactionService {
     public List<Transaction>findTransaction()
 
     {
-        logger.info("Service : Providing service to API : Transaction List :");
+        logger.info("Service : All transaction: Transaction List :");
         return transactionRepository.findAll();
     }
 

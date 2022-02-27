@@ -1,0 +1,34 @@
+2022-02-25 16:17:49.010  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : Starting WalletServiceTest using Java 17.0.1 on LAPTOP-MV12NDAT with PID 9264 (started by ASUS in C:\Users\ASUS\Downloads\walletmng\walletmng)
+2022-02-25 16:17:49.023 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-25 16:17:49.023  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : No active profile set, falling back to default profiles: default
+2022-02-25 16:18:00.741  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : Started WalletServiceTest in 12.274 seconds (JVM running for 15.747)
+2022-02-25 16:18:00.913  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.S.WalletService                    : Service:All Wallet : getAllWallet request
+2022-02-25 16:18:00.913  WARN LAPTOP-MV12NDAT --- [           main] c.e.w.S.WalletService                    : Service : Fetching list of Wallets  : 
+2022-02-25 16:18:21.363  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : Starting WalletServiceTest using Java 17.0.1 on LAPTOP-MV12NDAT with PID 22116 (started by ASUS in C:\Users\ASUS\Downloads\walletmng\walletmng)
+2022-02-25 16:18:21.368 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-25 16:18:21.368  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : No active profile set, falling back to default profiles: default
+2022-02-25 16:18:28.491  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : Started WalletServiceTest in 7.447 seconds (JVM running for 9.412)
+2022-02-25 16:18:28.696  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.S.WalletService                    : Service:Create Wallet  : create wallet for a user 
+2022-02-25 16:18:28.697 ERROR LAPTOP-MV12NDAT --- [           main] c.e.w.S.WalletService                    : Service : You already have wallet with mobile number : 98765432
+2022-02-25 16:18:41.652  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : Starting WalletServiceTest using Java 17.0.1 on LAPTOP-MV12NDAT with PID 18200 (started by ASUS in C:\Users\ASUS\Downloads\walletmng\walletmng)
+2022-02-25 16:18:41.655 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-25 16:18:41.656  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : No active profile set, falling back to default profiles: default
+2022-02-25 16:18:48.139  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletServiceTest                  : Started WalletServiceTest in 6.868 seconds (JVM running for 8.706)
+2022-02-25 16:18:48.207  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.S.WalletService                    :  Service:One Wallet: getWallet by mobile number  request
+2022-02-25 16:18:48.212  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.S.WalletService                    : Fetching details for 76584309 -->
+2022-02-27 09:42:24.645  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.TransactionControllerTest          : Starting TransactionControllerTest using Java 17.0.1 on LAPTOP-MV12NDAT with PID 7356 (started by ASUS in C:\Users\ASUS\Downloads\walletmng\walletmng)
+2022-02-27 09:42:24.662 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.TransactionControllerTest          : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-27 09:42:24.663  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.TransactionControllerTest          : No active profile set, falling back to default profiles: default
+2022-02-27 09:42:35.138  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.TransactionControllerTest          : Started TransactionControllerTest in 11.783 seconds (JVM running for 15.843)
+2022-02-27 09:42:36.335  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.C.TransactionController            : Controller : API for fetching all transaction reached to Controller
+2022-02-27 09:42:36.493  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.C.TransactionController            : Controller : API for fetching transaction detail reached to Controller
+2022-02-27 09:42:36.498  WARN LAPTOP-MV12NDAT --- [           main] c.e.w.C.TransactionController            : Controller : fetching detail for transaction id : 1-->
+2022-02-27 09:43:01.153  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletControllerTest               : Starting WalletControllerTest using Java 17.0.1 on LAPTOP-MV12NDAT with PID 17312 (started by ASUS in C:\Users\ASUS\Downloads\walletmng\walletmng)
+2022-02-27 09:43:01.163 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletControllerTest               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-27 09:43:01.163  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletControllerTest               : No active profile set, falling back to default profiles: default
+2022-02-27 09:43:10.555  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletControllerTest               : Started WalletControllerTest in 10.006 seconds (JVM running for 12.68)
+2022-02-27 09:43:11.396  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.C.WalletController                 : Controller : API for creating  wallet reached to Controller
+2022-02-27 09:43:11.397  WARN LAPTOP-MV12NDAT --- [           main] c.e.w.C.WalletController                 : Controller : creating wallet for   mobile number : 9109549374
+2022-02-27 09:43:11.403  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.C.WalletController                 : Wallet created successfully
+2022-02-27 09:43:11.494  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.C.WalletController                 : Controller : API for Fetching all wallet reached to Controller
+2022-02-27 09:43:11.495  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.C.WalletController                 : Successfully fetched!!

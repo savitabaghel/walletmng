@@ -1,6 +1,6 @@
 package com.example.walletmng;
 
-import com.example.walletmng.Repository.WalletRepository;
+import com.example.walletmng.dao.WalletRepository;
 import com.example.walletmng.Service.WalletService;
 import com.example.walletmng.model.Wallet;
 import org.junit.jupiter.api.Test;
@@ -37,7 +37,7 @@ public class WalletServiceTest {
 
     }
     @Test
-    public void getWalletByMobileTest()
+    public void getWalletByMobileTest() throws Exception
     {
         Wallet wallet=new Wallet();
 

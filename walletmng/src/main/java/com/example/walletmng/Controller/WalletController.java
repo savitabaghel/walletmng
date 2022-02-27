@@ -36,17 +36,21 @@ public class WalletController {
     }
 
     @PostMapping("/wallet")
-    public ResponseEntity<Object>createWallet(@RequestBody Wallet wallet)
+    public ResponseEntity<Object>createWallet(@RequestBody Wallet wallet) throws Exception
     {
+             logger.info("Controller : API for creating  wallet reached to Controller");
+             logger.warn("Controller : creating wallet for   mobile number : " + wallet.getMobileno());
+             Wallet result=walletService.create(wallet);
+             if(result!=null)
+             {
+                 logger.info("Wallet created successfully");
+                 return BaseResponse.generateResponse("Successfully created", HttpStatus.CREATED, result);
+             }
 
-            Wallet result=walletService.create(wallet);
-
-            if(result!=null){
-                logger.info("Wallet created successfully");
-                return BaseResponse.generateResponse("Successfully created", HttpStatus.CREATED,result);
-            }
             else
-            {   logger.error("Wallet not created");
+            {
+
+                 logger.error("Wallet not created");
                 return BaseResponse.generateResponse("Cant created",HttpStatus.MULTI_STATUS,null);
             }
 
@@ -55,18 +59,23 @@ public class WalletController {
     @GetMapping("/wallet")
     public ResponseEntity<Object>getWallet()
     {
+
+        logger.info("Controller : API for Fetching all wallet reached to Controller");
+
         try {
             List<Wallet>result=walletService.findAllWallet();
+            logger.info("Successfully fetched!!");
             return BaseResponse.generateResponse("Success",HttpStatus.OK,result);
         }
         catch (Exception e)
         {
+            logger.error("Cant load wallet details");
             return BaseResponse.generateResponse(e.getMessage(), HttpStatus.MULTI_STATUS,null);
         }
     }
 
     @GetMapping("/wallet/{mobileno}")
-    public ResponseEntity<Object>getbymobile(@PathVariable("mobileno")String mobileno)
+    public ResponseEntity<Object>getbymobile(@PathVariable("mobileno")String mobileno) throws Exception
     {
         try
         {
@@ -80,28 +89,31 @@ public class WalletController {
         }
     }
    @PostMapping("/transaction")
-   public ResponseEntity<Object>transactionbymobile(@RequestBody Holder holder)
-   {
+   public ResponseEntity<Object>transactionbymobile(@RequestBody Holder holder) throws Exception {
 
-         // logger.info(holder);
-           boolean result=walletService.transaction(holder);
-           if(result)
+           try {
+
+               boolean result=walletService.transaction(holder);
                return BaseResponse.generateResponse("Transaction successfully",HttpStatus.OK,null);
-           else
+               }
+           catch (Exception e)
+           {
                return BaseResponse.generateResponse("Unsuccessful",HttpStatus.MULTI_STATUS,null);
+           }
 
    }
    @PutMapping("/wallet/{mobileno}")
-    public ResponseEntity<Object>addInWallet(@RequestBody WalletDao walletDao, @PathVariable("mobileno")String mobileno)
-   {
+    public ResponseEntity<Object>addInWallet(@RequestBody WalletDao walletDao, @PathVariable("mobileno")String mobileno) throws Exception {
 
-       Wallet wallet=walletService.addMoney(walletDao.getMoney(), mobileno);
-       if(wallet!=null){
-           return BaseResponse.generateResponse("successfully added",HttpStatus.OK,wallet);
-       }
-       else
+
+           try {
+               Wallet wallet = walletService.addMoney(walletDao.getMoney(), mobileno);
+               return BaseResponse.generateResponse("successfully added", HttpStatus.OK, wallet);
+              }
+
+       catch (Exception e)
        {
-           return BaseResponse.generateResponse("wallet not present",HttpStatus.BAD_REQUEST,null);
+           return BaseResponse.generateResponse("Unsuccessfull",HttpStatus.BAD_REQUEST,null);
        }
    }
 

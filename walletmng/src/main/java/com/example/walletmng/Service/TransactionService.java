@@ -1,8 +1,8 @@
 package com.example.walletmng.Service;
 
 
-import com.example.walletmng.Repository.TransactionRepository;
-import com.example.walletmng.kafka.Consumer;
+import com.example.walletmng.Exception.TransactionNotFoundException;
+import com.example.walletmng.dao.TransactionRepository;
 import com.example.walletmng.model.Transaction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,16 +26,32 @@ public class TransactionService {
     // to find transaction by a particular id
     public Transaction findby(long id)
     {
-        logger.info("Service : Find transaction by id: Transaction Information for Id:");
+        logger.info("Service : Find transaction by id: Transaction Information for Id:"+id);
         Transaction result= transactionRepository.findById(id).get();
+        if(result==null)
+        {
+            logger.error("Transaction with id"+id+" is not found");
+            throw new TransactionNotFoundException(id);
+        }
         return result;
     }
+
+
     //to get list of all transaction
     public List<Transaction>findTransaction()
 
     {
         logger.info("Service : All transaction: Transaction List :");
         return transactionRepository.findAll();
+    }
+
+    //get transaction list for a user
+    public List<Transaction> getTransactionForUser(String mobileno)
+    {
+        logger.info("retrieving");
+        List<Transaction>list1=transactionRepository.findByMobile(mobileno);
+        return list1;
+
     }
 
 }

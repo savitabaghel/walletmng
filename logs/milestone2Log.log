@@ -30,3 +30,60 @@
 2022-02-21 15:14:27.162 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
 2022-02-21 15:14:37.251  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 17.981 seconds (JVM running for 21.73)
 2022-02-21 15:17:34.289  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-5] c.e.w.S.TransactionService               : Service : Providing service to API : Transaction List :
+2022-02-27 09:29:26.317  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 14532 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-27 09:29:26.352 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-27 09:29:26.354  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-27 09:29:35.256 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-27 09:29:46.961  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 23.585 seconds (JVM running for 29.987)
+2022-02-27 09:31:03.067  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-3] c.e.w.S.WalletService                    : Service:Add money   : Add money in wallet
+2022-02-27 09:31:03.074  WARN LAPTOP-MV12NDAT --- [nio-8383-exec-3] c.e.w.S.WalletService                    : Service : Adding money : 450.0 to wallet : 9109549311
+2022-02-27 09:31:04.466  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-3] c.e.w.S.WalletService                    : Wallet for these user is exist
+2022-02-27 09:33:05.116  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-7] c.e.w.C.WalletController                 : Controller : API for creating  wallet reached to Controller
+2022-02-27 09:33:05.117  WARN LAPTOP-MV12NDAT --- [nio-8383-exec-7] c.e.w.C.WalletController                 : Controller : creating wallet for   mobile number : 9109000000
+2022-02-27 09:33:05.118  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-7] c.e.w.S.WalletService                    : Service:Create Wallet  : create wallet for a user 
+2022-02-27 09:33:05.125 ERROR LAPTOP-MV12NDAT --- [nio-8383-exec-7] c.e.w.S.WalletService                    : Service : You already have wallet with mobile number : 9109000000
+2022-02-27 09:33:49.467  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-9] c.e.w.C.WalletController                 : Controller : API for creating  wallet reached to Controller
+2022-02-27 09:33:49.546  WARN LAPTOP-MV12NDAT --- [nio-8383-exec-9] c.e.w.C.WalletController                 : Controller : creating wallet for   mobile number : 9109000111
+2022-02-27 09:33:49.547  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-9] c.e.w.S.WalletService                    : Service:Create Wallet  : create wallet for a user 
+2022-02-27 09:33:50.233 ERROR LAPTOP-MV12NDAT --- [nio-8383-exec-9] c.e.w.S.WalletService                    : Service : You already have wallet with mobile number : 9109000111
+2022-02-27 09:33:50.575  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-9] c.e.w.C.WalletController                 : Wallet created successfully
+2022-02-27 09:38:04.182  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 7376 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-27 09:38:04.200 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-27 09:38:04.202  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-27 09:38:07.565 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-27 09:38:12.879  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 9.394 seconds (JVM running for 10.909)
+2022-02-27 09:38:24.287  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-2] c.e.w.C.WalletController                 : Controller : API for creating  wallet reached to Controller
+2022-02-27 09:38:24.288  WARN LAPTOP-MV12NDAT --- [nio-8383-exec-2] c.e.w.C.WalletController                 : Controller : creating wallet for   mobile number : 9109000112
+2022-02-27 09:38:24.289  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-2] c.e.w.S.WalletService                    : Service:Create Wallet  : create wallet for a user 
+2022-02-27 09:38:25.721  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-2] c.e.w.C.WalletController                 : Wallet created successfully
+2022-02-27 09:40:06.318  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-5] c.e.w.C.TransactionController            : Controller : API for fetching all transaction reached to Controller
+2022-02-27 09:40:06.319  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-5] c.e.w.S.TransactionService               : Service : All transaction: Transaction List :
+2022-02-27 09:41:09.042  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-6] c.e.w.C.TransactionController            : Controller : API for fetching transaction detail reached to Controller
+2022-02-27 09:41:09.049  WARN LAPTOP-MV12NDAT --- [nio-8383-exec-6] c.e.w.C.TransactionController            : Controller : fetching detail for transaction id : 2-->
+2022-02-27 09:41:09.050  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-6] c.e.w.S.TransactionService               : Service : Find transaction by id: Transaction Information for Id:2
+2022-02-27 09:44:26.323  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 15108 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-27 09:44:26.347 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-27 09:44:26.348  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-27 09:44:29.651 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-27 09:44:35.201  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 9.539 seconds (JVM running for 11.001)
+2022-02-27 09:55:01.294  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 8476 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-27 09:55:01.334 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-27 09:55:01.337  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-27 09:55:05.117 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-27 09:58:23.870  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 1756 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-27 09:58:23.885 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-27 09:58:23.887  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-27 09:58:27.341 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-27 09:58:32.388  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 9.163 seconds (JVM running for 10.733)
+2022-02-27 21:28:12.676  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 11556 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-27 21:28:12.686 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-27 21:28:12.687  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-27 21:28:16.584 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-27 21:28:23.219  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 11.367 seconds (JVM running for 13.833)
+2022-02-27 21:31:32.054  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-5] c.e.w.C.TransactionController            : Controller : API for fetching all transaction reached to Controller
+2022-02-27 21:31:32.055  INFO LAPTOP-MV12NDAT --- [nio-8383-exec-5] c.e.w.S.TransactionService               : Service : All transaction: Transaction List :
+2022-02-27 21:33:33.534  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Starting WalletmngApplication using Java 17.0.1 on LAPTOP-MV12NDAT with PID 21968 (C:\Users\ASUS\Downloads\walletmng\walletmng\target\classes started by ASUS in C:\Users\ASUS\Downloads\walletmng)
+2022-02-27 21:33:33.545 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-27 21:33:33.546  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : No active profile set, falling back to default profiles: default
+2022-02-27 21:33:35.668 DEBUG LAPTOP-MV12NDAT --- [           main] c.e.w.f.JwtFilter                        : Filter 'jwtFilter' configured for use
+2022-02-27 21:33:39.408  INFO LAPTOP-MV12NDAT --- [           main] c.e.w.WalletmngApplication               : Started WalletmngApplication in 6.354 seconds (JVM running for 7.432)

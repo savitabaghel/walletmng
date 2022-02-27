@@ -1,4 +1,4 @@
-package com.example.walletmng.Repository;
+package com.example.walletmng.dao;
 
 import com.example.walletmng.model.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;

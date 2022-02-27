@@ -1,7 +1,7 @@
 package com.example.walletmng;
 
 
-import com.example.walletmng.Repository.TransactionRepository;
+import com.example.walletmng.dao.TransactionRepository;
 import com.example.walletmng.model.Transaction;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,10 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)

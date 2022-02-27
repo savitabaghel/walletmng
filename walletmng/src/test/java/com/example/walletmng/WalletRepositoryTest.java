@@ -1,6 +1,6 @@
 package com.example.walletmng;
 
-import com.example.walletmng.Repository.WalletRepository;
+import com.example.walletmng.dao.WalletRepository;
 import com.example.walletmng.model.Wallet;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,10 +1,12 @@
 package com.example.walletmng.Service;
 
 
-import com.example.walletmng.Controller.WalletController;
+import com.example.walletmng.Exception.InsufficientAmount;
+import com.example.walletmng.Exception.WalletAlreadyExist;
+import com.example.walletmng.Exception.WalletNotFoundException;
 import com.example.walletmng.dao.Holder;
-import com.example.walletmng.Repository.TransactionRepository;
-import com.example.walletmng.Repository.WalletRepository;
+import com.example.walletmng.dao.TransactionRepository;
+import com.example.walletmng.dao.WalletRepository;
 import com.example.walletmng.model.Transaction;
 import com.example.walletmng.model.Wallet;
 import org.apache.logging.log4j.LogManager;
@@ -36,37 +38,46 @@ public class WalletService {
 
         return walletRepository.findAll();
     }
-    public Wallet findOne(String mobileno)
+    public Wallet findOne(String mobileno)throws Exception
     {
         logger.info(" Service:One Wallet: getWallet by mobile number  request");
 
         Wallet exists=walletRepository.findByMobileno(mobileno);
+        if(exists==null)
+        {
+            logger.error("Wallet with "+mobileno+" is not present");
+            throw new WalletNotFoundException(mobileno);
+
+        }
+        logger.info("Fetching details for "+mobileno+" -->");
         return exists;
     }
     public Wallet create(Wallet wallet)
     {
 
         logger.info("Service:Create Wallet  : create wallet for a user ");
-        Wallet exists= null;
-                exists=walletRepository.findByMobileno(wallet.getMobileno());
-         if(exists!=null);
-        {
-            logger.warn("wallet already present");
-        }
+        Wallet exists =null;
+        exists =walletRepository.findByMobileno(wallet.getMobileno());
+
+
         return walletRepository.save(wallet);
 
 
 
     }
-    public Wallet addMoney(double money,String mobileno)
+    public Wallet addMoney(double money,String mobileno)throws Exception
 
     {
         logger.info("Service:Add money   : Add money in wallet");
+        logger.warn("Service : Adding money : " + money + " to wallet : " + mobileno);
         Wallet exists=walletRepository.findByMobileno(mobileno);
-       if(exists!=null)
+       if(exists==null)
        {
+           logger.error("wallet with "+mobileno+" is not present ");
+           throw new WalletNotFoundException(mobileno);
+       }
 
-           logger.info("Wallet for these user is exist");
+        logger.info("Wallet for these user is exist");
         double currentBalance=exists.getBalance();
         double finalBalance=currentBalance+money;
         exists.setBalance(finalBalance);
@@ -79,33 +90,38 @@ public class WalletService {
         crt.setAmount(money);
         transactionRepository.save(crt);
         return exists;
-       }
-       else{
-           logger.error("Failed : due to wallet not exists");
-           return null;}
+
 
     }
 
-    public boolean transaction(Holder holder)
+    public boolean transaction(Holder holder) throws Exception
     {
-        logger.info("Service:make transaction service  : Add money in wallet");
+
         Wallet payewallet=walletRepository.findByMobileno(holder.getPayembileno());
 
         Wallet payerwallet=walletRepository.findByMobileno(holder.getPayermobileno());
 
-        if(payewallet==null||payerwallet==null)
+        if(payewallet==null)
         {
-            logger.error("Wallet not exist!!!");
-            return false;
+            logger.error("Wallet not exist for mobile number"+holder.getPayembileno());
+            throw new WalletNotFoundException(holder.getPayembileno());
+        }
+        if(payerwallet==null)
+        {
+            logger.error("Wallet with mobile number"+holder.getPayermobileno()+" is not present");
+            throw new WalletNotFoundException(holder.getPayermobileno());
         }
         double payeeamount=payewallet.getBalance();
         double payerAmount=payerwallet.getBalance();
         double amount=holder.getAmount();
 
-        System.out.println(amount);
 
-         if(payerAmount-amount>=0)
-        {
+         if(payerAmount-amount<0)
+         {
+            logger.error("Payer Wallet has not sufficient Amount in wallet");
+            throw new InsufficientAmount(holder.getPayermobileno());
+         }
+
 
             payerAmount = payerAmount-amount;
             payeeamount=payeeamount+amount;
@@ -127,11 +143,8 @@ public class WalletService {
 
             return true;
 
-        }
-        else{
-             logger.warn("Insufficient Amount!!");
-            return false;
-           }
+
+
 
     }
 

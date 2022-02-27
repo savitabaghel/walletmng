@@ -1,6 +1,6 @@
 package com.example.walletmng;
 
-import com.example.walletmng.Repository.TransactionRepository;
+import com.example.walletmng.dao.TransactionRepository;
 import com.example.walletmng.Service.TransactionService;
 import com.example.walletmng.model.Transaction;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

@@ -77,37 +77,46 @@ public class WalletController {
     @GetMapping("/wallet/{mobileno}")
     public ResponseEntity<Object>getbymobile(@PathVariable("mobileno")String mobileno) throws Exception
     {
+
+        logger.info("Controller : API for Fetching  wallet for mobile no ."+ mobileno+" reached to Controller");
         try
         {
+            logger.info("Wallet fatched!!!");
             Wallet wallet1=walletService.findOne(mobileno);
             return BaseResponse.generateResponse("Successful",HttpStatus.OK,wallet1);
 
         }
         catch (Exception e)
         {
+            logger.info("Cannot fetched Wallet");
             return BaseResponse.generateResponse(e.getMessage(), HttpStatus.BAD_REQUEST,null);
         }
     }
    @PostMapping("/transaction")
-   public ResponseEntity<Object>transactionbymobile(@RequestBody Holder holder) throws Exception {
-
+   public ResponseEntity<Object>transactionbymobile(@RequestBody Holder holder) throws Exception
+   {
+       logger.info("Controller : API for transaction   reached to Controller");
            try {
 
                boolean result=walletService.transaction(holder);
+               logger.info("Transaction successfully!!");
                return BaseResponse.generateResponse("Transaction successfully",HttpStatus.OK,null);
                }
            catch (Exception e)
            {
+               logger.error("Unsucessfull Transaction");
                return BaseResponse.generateResponse("Unsuccessful",HttpStatus.MULTI_STATUS,null);
            }
 
    }
    @PutMapping("/wallet/{mobileno}")
-    public ResponseEntity<Object>addInWallet(@RequestBody WalletDao walletDao, @PathVariable("mobileno")String mobileno) throws Exception {
-
+    public ResponseEntity<Object>addInWallet(@RequestBody WalletDao walletDao, @PathVariable("mobileno")String mobileno) throws Exception
+   {
+          logger.info("Controller : API for add money in wallet  reached to Controller");
 
            try {
                Wallet wallet = walletService.addMoney(walletDao.getMoney(), mobileno);
+               logger.info(" money  added in wallet");
                return BaseResponse.generateResponse("successfully added", HttpStatus.OK, wallet);
               }
 
